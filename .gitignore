@@ -20,6 +20,7 @@ db.sqlite3-journal
 
 *.pdf
 *.docx
+*.pptx
 *2조_WBS.xlsx
 *변수 리스트 및 데이터셋 구성.xlsx
 회의메모 및 자료조사/
