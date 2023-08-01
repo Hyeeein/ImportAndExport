@@ -187,24 +187,87 @@ RMSE 값인 368,070과 유사하게 차이난다는 점에서 수입액을 거�
 
 #### ▷ 데이터의 정상성 확인 및 차분
 
+수출액, 수입액 모두 1차 차분 모델 정상성 만족
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/03b4d898-3676-4b0b-a502-36faf9a7781f)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/8ee704ee-d95e-4841-8cc2-7b9ae925c620)
+
+p, d, q 파라미터 추정 시, 수출액과 수입액 모두 AIC 값이 가장 작은 **ARIMA(2,1,0)** 을 활용
+
 #### ▷ 하이퍼 파라미터 추정 & p-value, AIC 값 확인
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/99909336-4d35-473e-bd39-3440623dac1b)
+
+수출액에 관한 ARIMA(2, 1, 0) 모델 수행 결과, AIC는 3594.722이고 **모델은 유의함**
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/6f0d77f2-f57a-4361-997b-6ffa0d7a79c3)
+
+수입액에 관한 ARIMA(2, 1, 0) 모델 수행 결과, AIC는 3154.223이고 **모델은 유의함**
 
 #### ▷ ARIMA 모델 학습 후 예측 그래프 시각화
 
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/21cb7474-e896-4eda-a459-510b2f40d198)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/8c8f4c90-f9e0-455f-876d-e0c645d357d9)
+
+왼쪽 그래프의 y는 실제 수출액, forecast는 예측된 수출액 값을 의미. 실제 값과 거의 유사함
+오른쪽 그래프의 y는 실제 수입액, forecast는 예측된 수입액 값을 의미. 실제 값과 거의 유사함
+
 #### ▷ 2022.01~2022.03 수출액, 수입액 예측
+
+* 2022.01.01~2023.03.31 수출액 예측
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/2ebfaeb7-a347-44e9-b99f-ec44b7d67fd4)
+
+2022년 이후로 15개월 동안의 수출액을 예측해보았을 때, 코로나 이후로 수출액이 크게 감소했지만, 다시 평균지점을 회복하는 수출액 동향을 보일 것으로 예측됨
+
+* 2022.01.01~2023.03.31 수입액 예측
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/376a02c9-135d-4b72-927c-5f241bf8389a)
+
+2022년 이후로 15개월 동안의 수입액을 예측해보았을 때, 수입액은 코로나 19에 영향을 크게 받지 않지만, 앞으로의 수입액은 전보다는 조금 안정된 모형으로 수렴할 것으로 예측됨
 
 ### (2) 반도체
 
 #### ▷ 데이터의 정상성 확인 및 차분
 
-#### ▷ 하이퍼 파라미터 추정 & p-value, AIC 값 확인
+수출액, 수입액 모두 1차 차분 모델 정상성 만족
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/a1a4ef72-42ce-4192-a669-d24c727d9111)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/26525c7c-6669-4a96-9ba2-1e41424793b6)
+
+#### ▷ 하이퍼 파라미터 추정
+
+수출액, 수입액 모두 auto_arima를 사용하여 하이퍼 파라미터를 추정한 결과
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/1ce26f31-7f18-4f1f-9261-8fb15f6a8b4d)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/c04aed68-795a-47a4-a10e-b141933ed5ed)
+
+- 수출액은 ARIMA (2, 1, 1)
+- 수입액은 ARIMA (0, 1, 1)
 
 #### ▷ ARIMA 모델 학습 후 예측 그래프 시각화
 
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/7450a02c-d774-4607-bb49-3e942319d1b6)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/e787760f-3d11-4eea-b4a0-d81a7d96d413)
+
+왼쪽 그래프의 y는 실제 수출액, forecast는 예측된 수출액 값을 의미. 실제 값과 거의 유사함
+오른쪽 그래프의 y는 실제 수입액, forecast는 예측된 수입액 값을 의미. **실제 값보다는 조금 낮게 형성**
+
 #### ▷ 2022.01~2022.03 수출액, 수입액 예측
 
-### (3) TSI 결과 및 예측 분석
+* 2022.01.01~2023.03.31 수출액 예측
 
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/31bc41a8-bcf7-4d58-a564-2dd7eb19ebb1)
+
+2022년 이후로 15개월 동안의 수출액을 예측해보았을 때, 코로나 전후로 반도체 수출액이 큰 폭으로 변화하지만, 앞으로 평균지점을 회복하는 수출액 동향을 보일 것으로 예측
+
+* 2022.01.01~2023.03.31 수입액 예측
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/5ae2a60f-a509-4795-b309-16de546f2483)
+
+2022년 이후로 15개월 동안의 수입액을 예측해보았을 때, 코로나 전에는 반도체 수입액이 큰 폭으로 변화했지만, 앞으로 평균지점을 회복하는 수입액 동향을 보일 것으로 예측됨
+
+### (3) TSI 결과 및 예측 분석
 #### ▷ 자동차부품
 
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/00132f6d-5fdf-4338-851e-24b8fdbc73d3)
