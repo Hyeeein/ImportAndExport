@@ -7,14 +7,17 @@
   - 김현아, 박혜인: 반도체 및 자동차 부품 수출입 ARIMA, 다중회귀분석 <br>
   - 임승찬(팀장), 조완제 : TSI지수 ARIMA 분석
 
+
 ## 1. 프로젝트 기획 배경 및 목표
 * 프로젝트 기획 배경
-
-![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/63b8b689-424a-421e-8516-b8254638f88e)
+  - 국내 전통 산업의 견고한 성장
+  - ICT 기술 발달에 따라 반도체 및 자동차 부품 수요 증가
 
 * 프로젝트 목표
+  - 포스트 코로나 시대의 자동차부품, 반도체 품목 **수출입 예측 모델 수립**
+  - 한국과 주요국 간의 품목별 **수출경쟁력 비교 분석 및 예측**
+  - 변화하느 수출입에 따른 품목별 공급 및 수요 시사점에 대한 **인사이트 도출**
 
-![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/95d4d8f3-56b7-464d-8524-0bfb6eb373da)
 
 ## 2. 주제 설명 및 품목 선정 과정
 ### (1) 주제에서 말하는 **경쟁력**의 의미
@@ -38,6 +41,7 @@
 
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/265d7b71-a864-4f9c-a9c8-7998c585e559)
 
+
 ## 3. 데이터 전처리
 ### (1) 사용 데이터 목록
 
@@ -45,22 +49,18 @@
 
 ### (2) 데이터 전처리
 
-* 다중 회귀 분석용 데이터셋 구성
+* 다중회귀분석, ARIMA 시계열 분석을 위한 데이터셋 구성
+  - [자동차부품 코드 ⭐ Hyein's Part !!](https://github.com/Hyeeein/ImportAndExport/blob/master/Data%20Preprocessing/Automotive%20Parts_Datasets.ipynb)
+  - [반도체 코드](https://github.com/Hyeeein/ImportAndExport/blob/master/Data%20Preprocessing/Semiconductor_Datasets.ipynb)
+  - 코드 실행 후, 전처리된 데이터셋 파일 새로 저장하여 사용
 
-![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/d0741106-9134-4889-b3e1-d51a47ae91a2)
-
-* ARIMA 시계열 분석용 데이터셋 구성
-
-![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/91fb8236-de08-43a1-ac69-8e6efc8027f0)
-
-* 자동차부품, 반도체 산업의 TSI, RCA 지수 계산
+* 자동차부품, 반도체 산업의 TSI, RCA 지수 계산식을 사용하여 새로운 값 생성
 
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/4015d7c3-5fb4-4940-b85a-b31e5799d24d)
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/fce87d0c-eed1-4b91-ae32-2abfbc84a2c6)
 
-이 식을 바탕으로 .iloc 함수를 사용하여 컬럼을 가져와 새로운 값 생성
 
-## 3. 다중회귀분석을 통한 요인 변수 추출
+## 4. 다중회귀분석
 선형회귀 분석 전, 모델 가정인 정규성과 등분산성을 확인하고 유의하지 않은 피처는 삭제 (p-value 사용)
 
 그리고 실제 2022년 값과 모델 출력 값이 얼마나 유사한지 scatter plot으로 확인하고 <br>
@@ -80,7 +80,6 @@
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/5fadce2c-ddbc-46fe-9c99-d5fa628cd975)
 
 수출액의 경우, p-value 값이 0.05가 넘지 않는 피처 변수로 **환율, 기준금리, 고용률** 제거 <br>
-따라서, 위와 같은 회귀식 도출
 
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/8073fd89-a2a2-4c96-9985-f50dc733c989)
 
@@ -122,6 +121,7 @@ RMSE 값인 160,421와 유사하게 차이난다는 점에서 수출액을 거�
 
 2022년 1~2월 자동차부품 수입액은 예측값과 실제값의 차이가 RMSE 값인 22,085보다는 더 큰 차이가 남 <br>
 수출보다는 예측력이 조금 떨어짐을 확인할 수 있음
+
 
 ### (2) 반도체
 
@@ -176,15 +176,39 @@ RMSE 값인 953,129와 유사하게 차이난다는 점에서 수출액을 거�
 
 RMSE 값인 368,070과 유사하게 차이난다는 점에서 수입액을 거의 유사하게 예측함을 확인할 수 있음
 
-## 4. ARIMA 시계열 모형을 활용한 수출입 경쟁력 예측
+---
+
+## 5. ARIMA 시계열 모형을 활용한 수출입 경쟁력 예측
+* ARIMA 분석 프로세스 및 예측 과정
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/f64adcc1-6913-46fb-a5a2-7d1a68f0f08c)
 
 ### (1) 자동차부품 ⭐ Hyein's Part !!
 
 ### (2) 반도체
 
+### (3) TSI, RCA 지수 분석
 
-## 5. 결론 및 기대효과
 
+## 6. 결론
 
-## 6. 참고자료
+* 수출입 금액 예측 모델링 구현에 대한 결론
+```
+다중회귀분석에서 RMSE 값에 맞춰 수출입 금액의 결과가 예측이 잘 되었음.
+하지만, 수출입 금액에 영향을 주는 수많은 피처가 있으므로, 새로운 피처를 찾아 더 나은 예측력을 보일 필요가 있음
+
+ARIMA에서는 2022~2023.3.31까지 예측을 했는데 코로나 19 장기화됨에 따라
+수출입 금액의 불확실성 증가된 가운데 정교한 학습과 데이터 확보가 필요함
+```
+
+* 경쟁력 예측
+```
+자동차부품의 TSI 결과, 차동장치 및 드라이브축, 부분품, 기타, 클러치, 서스펜션,
+운전대 품목이 수출특화에 가까운 품목이 될 것으로 예측됨. 완충기는 수입특화에 가까운 품목으로 예측.
+
+반도체의 TSI 결과, 메모리 반도체 경우, 한국이 가장 높은 무역특화지수를 예측되고 있지만
+집적회로반도체 부품과 다이오드는 해외 수입 의존도가 높아질 것으로 예측됨
+```
+
+## 7. 참고자료
 - [포트폴리오](https://github.com/Hyeeein/ImportAndExport/blob/master/Documents/%5B%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%5D%20%EA%B5%AD%EB%82%B4%20%EC%88%98%EC%B6%9C%EC%9E%85%20%ED%92%88%EB%AA%A9%EB%B3%84%20%EA%B2%BD%EC%9F%81%EB%A0%A5%20%EC%98%88%EC%B8%A1%20(%EB%B0%98%EB%8F%84%EC%B2%B4%2C%20%EC%9E%90%EB%8F%99%EC%B0%A8%20%EB%B6%80%ED%92%88).pdf)
