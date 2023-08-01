@@ -60,13 +60,13 @@
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/fce87d0c-eed1-4b91-ae32-2abfbc84a2c6)
 
 
-## 4. 다중회귀분석
+## 4. 다중회귀분석 ⭐
 선형회귀 분석 전, 모델 가정인 정규성과 등분산성을 확인하고 유의하지 않은 피처는 삭제 (p-value 사용)
 
 그리고 실제 2022년 값과 모델 출력 값이 얼마나 유사한지 scatter plot으로 확인하고 <br>
 해당 모델을 MSE, RMSE, MAE, R2_Score 값을 확인하여 성능 평가 진행 → 실제 데이터를 대입해 예측 결과 확인
 
-### (1) 자동차부품 ⭐ Hyein's Part !!
+### (1) 자동차부품 
 
 #### ▷ 선형 회귀모델 가정 확인 (정규성, 등분산성 검정) *사진 순서는 수출액, 수입액 순서임. 이하 동일*
 
@@ -178,12 +178,12 @@ RMSE 값인 368,070과 유사하게 차이난다는 점에서 수입액을 거�
 
 ---
 
-## 5. ARIMA 시계열 모형을 활용한 수출입 경쟁력 예측
+## 5. ARIMA 시계열 모형을 활용한 수출입 경쟁력 예측 ⭐
 * ARIMA 분석 프로세스 및 예측 과정
 
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/f64adcc1-6913-46fb-a5a2-7d1a68f0f08c)
 
-### (1) 자동차부품 ⭐ Hyein's Part !!
+### (1) 자동차부품
 
 #### ▷ 데이터의 정상성 확인 및 차분
 
