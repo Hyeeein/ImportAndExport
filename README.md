@@ -77,11 +77,11 @@
 
 #### ▷ OLS Regression으로 유의성 검정 후 피처변수 제거, 모델 선언 및 학습
 
-![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/29618641-594b-40a7-bbad-3002d9f9ecc1)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/e59ecdb5-6f19-434e-8a2f-dd9ad569f702)
 
-수출액의 경우, p-value 값이 0.05가 넘지 않는 피처 변수로 **환율, 기준금리, 고용률** 제거 <br>
+수출액의 경우, p-value 값이 0.05가 넘지 않는 피처 변수로 **환율, 기준금리, 고용률** 제거
 
-![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/d5b937ed-f27b-4377-a65a-8f114e663128)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/cfd7b0b2-aa9a-4da6-a2c9-b5f8b591d544)
 
 수입액의 경우, p-value 값이 0.05가 넘지 않는 피처 변수로 **국제유가, SCFI, 고용률** 제거 <br>
 따라서, 위와 같은 회귀식 도출. 이때 수출입과 수입액 모두 고용률은 유의하지 않은 변수로 선택되어 제거
