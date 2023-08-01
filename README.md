@@ -66,16 +66,16 @@
 그리고 실제 2022년 값과 모델 출력 값이 얼마나 유사한지 scatter plot으로 확인하고 <br>
 해당 모델을 MSE, RMSE, MAE, R2_Score 값을 확인하여 성능 평가 진행 → 실제 데이터를 대입해 예측 결과 확인
 
-### (1) 자동차부품
+### (1) 자동차부품 ⭐ Hyein's Part !!
 
-* 선형 회귀모델 가정 확인 (정규성, 등분산성 검정) *사진 순서는 수출액, 수입액 순서임. 이하 동일*
+#### ▷ 선형 회귀모델 가정 확인 (정규성, 등분산성 검정) *사진 순서는 수출액, 수입액 순서임. 이하 동일*
 
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/ce6f0c63-f8db-4ab0-989c-27b45efb5e7e)
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/3209b5f2-d5db-4990-a746-522fb5e1a998)
 
 수출액, 수입액 모두 정규성과 등분산성을 만족하므로 OLS 모델 구축에 활용 가능
 
-* OLS Regression으로 유의성 검정 후 피처변수 제거, 모델 선언 및 학습
+#### ▷ OLS Regression으로 유의성 검정 후 피처변수 제거, 모델 선언 및 학습
 
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/5fadce2c-ddbc-46fe-9c99-d5fa628cd975)
 
@@ -87,14 +87,14 @@
 수입액의 경우, p-value 값이 0.05가 넘지 않는 피처 변수로 **국제유가, SCFI, 고용률** 제거 <br>
 따라서, 위와 같은 회귀식 도출. 이때 수출입과 수입액 모두 고용률은 유의하지 않은 변수로 선택되어 제거
 
-* Scatter Plot을 활용한 미래 반응변수 값 예측
+#### ▷ Scatter Plot을 활용한 미래 반응변수 값 예측
 
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/1effc0bf-2ec5-4b8a-a3a5-6b36db60ba6d)
 ![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/a5b07a34-c02f-45d2-9406-91dc3ea4580c)
 
 순서대로 수출액, 수입액에 대한 반응변수 값 예측인데, 두 가지 모두 실제 값과 모델 출력값이 거의 유사함을 알 수 있음
 
-* 해당 모델 성능 평가
+#### ▷ 해당 모델 성능 평가
 
 **<수출액에 관한 해당 모델의 성능 평가 결과>**
 
@@ -125,7 +125,62 @@ RMSE 값인 160,421와 유사하게 차이난다는 점에서 수출액을 거�
 
 ### (2) 반도체
 
+#### ▷ 선형 회귀모델 가정 확인 (정규성, 등분산성 검정) *사진 순서는 수출액, 수입액 순서임. 이하 동일*
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/c079e4b8-46bf-4df3-b2b2-ec58c51a3bbf)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/d24d7080-31e3-4175-9973-b9e23f54b7fc)
+
+수출액, 수입액 모두 정규성과 등분산성을 만족하므로 OLS 모델 구축에 활용 가능
+
+#### ▷ Train, Test 데이터셋 분리
+
+#### ▷ OLS Regression으로 유의성 검정 후 피처변수 제거, 모델 선언 및 학습
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/9250e868-7f59-4e74-82a4-3e217520fee7)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/aa998af3-42f8-4b70-a33a-9e20816aee96)
+
+수출액, 수입액 모두 유의성 검정 시 유의한 결과를 나타내어 피처변수 제거 없이 학습 진행
+
+#### ▷ Scatter Plot을 활용한 미래 반응변수 값 예측
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/07ae6c6f-c6f4-44d5-89d8-b85b5fec09e5)
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/4f1337a9-ee5a-467e-a5d3-184ebb84881c)
+
+순서대로 수출액, 수입액에 대한 반응변수 값 예측인데, 두 가지 모두 실제 값과 모델 출력값이 거의 유사함을 알 수 있음
+
+#### ▷ 해당 모델 성능 평가
+
+**<수출액에 관한 해당 모델의 성능 평가 결과>**
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/d380225f-1592-4a4f-96d6-b21055d97240)
+
+테스트용 데이터셋 성능평가 결과, 결정계수가 79.8%의 정확도를 가지고 있음 <br>
+또, 각각 **RMSE가 953,129**이므로, **예측값과 실제값의 차이가 이 수치만큼 차이날 수 있음**을 예상할 수 있음
+
+테스트용 데이터가 아닌, 회귀분석에 사용하지 않은 2022년 1~2월 데이터셋을 사용하여 실제값과 비교한 결과
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/c67deeb3-ec3b-4feb-bae2-68f3b63535ef)
+
+RMSE 값인 953,129와 유사하게 차이난다는 점에서 수출액을 거의 유사하게 예측함을 확인할 수 있음
+
+**<수입액에 관한 해당 모델의 성능 평가 결과>**
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/c5eb213d-32d9-44b6-8e93-7b0e802f9565)
+
+테스트용 데이터셋 성능평가 결과, 결정계수가 77.0%의 정확도를 가지고 있음 <br>
+또, 각각 **RMSE가 368,070**이므로, **예측값과 실제값의 차이가 이 수치만큼 차이날 수 있음**을 예상할 수 있음
+
+테스트용 데이터가 아닌, 회귀분석에 사용하지 않은 2022년 1~2월 데이터셋을 사용하여 실제값과 비교한 결과
+
+![image](https://github.com/Hyeeein/ImportAndExport/assets/81239567/f5971306-1b2d-4380-b008-5ffc05ccf234)
+
+RMSE 값인 368,070과 유사하게 차이난다는 점에서 수입액을 거의 유사하게 예측함을 확인할 수 있음
+
 ## 4. ARIMA 시계열 모형을 활용한 수출입 경쟁력 예측
+
+### (1) 자동차부품 ⭐ Hyein's Part !!
+
+### (2) 반도체
 
 
 ## 5. 결론 및 기대효과
